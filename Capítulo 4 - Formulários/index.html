@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 4 - Formulários</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <h5>Exemplo</h5>
+    <div 
+        x-data="{
+            name: '',
+            submit() {
+                alert(this.name ? `Nome informado: ${this.name}.` : 'Nenhum nome informado.');
+                this.name = '';
+            }
+        }"
+    >
+        <form @submit.prevent="submit()">
+            <input 
+                type="text" 
+                x-model="name"
+            >
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+
+</html>
