@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 6 - Propriedades Mágicas</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <h5>Exemplo I</h5>
+    <div 
+        x-data="{ active: false }" 
+        x-init="$watch('active', value => { 
+            alert(`active: ${value}`); 
+        })"
+    >
+        <button @click="active = !active">Alternar</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo II</h5>
+    <div 
+        x-data="{ active: false }"
+        x-init="$watch('active', (newValue, oldValue) => { 
+            alert(`old: ${oldValue}\nnew: ${newValue}`);
+        })"
+    >
+        <button @click="active = !active">Alternar</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo III</h5>
+    <div 
+        x-data="{ active: false }" 
+        x-init="$watch('active', (newValue, oldValue) => {
+            $refs.element.style.backgroundColor = newValue ? 'blue' : 'red';
+        })"
+    >
+        <p x-ref="element">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nostrum labore explicabo nulla minima est eum
+            placeat itaque, provident nihil dignissimos repellat illo! Quasi, tenetur possimus ducimus sequi dolore aut?
+        </p>
+        <button @click="active = !active">Alternar</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo IV</h5>
+    <div 
+        x-data="{
+            active: false,
+            toggleElement() {
+                $watch('active', (newValue, oldValue) => {
+                    $refs.element.style.backgroundColor = newValue ? 'blue' : 'red';
+                })
+            }
+        }" 
+        x-init="toggleElement()"
+    >
+        <p x-ref="element">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nostrum labore explicabo nulla minima est eum
+            placeat itaque, provident nihil dignissimos repellat illo! Quasi, tenetur possimus ducimus sequi dolore aut?
+        </p>
+        <button @click="active = !active">Alternar</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo V</h5>
+    <div 
+        x-data="{ 
+            toggleElement(el) { el.style.backgroundColor = el.style.backgroundColor === 'red' ? 'blue' : 'red'; } 
+        }" 
+        x-init="toggleElement()"
+    >
+        <button @click="toggleElement($el)">Alternar</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo VI</h5>
+    <div 
+        x-data="{ 
+            active: false, 
+            data() { alert(`$data.active: ${$data.active}`); } 
+        }"
+    >
+        <button @click="data()">Acessar <b>data</b></button>
+    </div>
+</body>
+
+</html>
