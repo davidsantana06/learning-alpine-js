@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7 - Eventos</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <h5>Exemplo I</h5>
+    <div 
+        x-data
+        x-on:event-i.window="alert('Evento capturado!')"
+    >
+    </div>
+    <div x-data>
+        <button @click="$dispatch('event-i', { foo: 'bar' })">Disparar evento</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo II</h5>
+    <div 
+        x-data
+        x-on:event-ii.window="alert($event.detail.foo)"
+    >
+    </div>
+    <div x-data>
+        <button @click="$dispatch('event-ii', { foo: 'bar' })">Disparar evento</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo III</h5>
+    <div 
+        x-data="{ func(event) { alert(event.detail.foo); } }"
+        x-on:event-iii.window="func($event)"
+    >
+    </div>
+    <div x-data>
+        <button @click="$dispatch('event-iii', { foo: 'bar' })">Disparar evento</button>
+    </div>
+</body>
+
+</html>
