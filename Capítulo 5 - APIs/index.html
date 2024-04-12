@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 5 - APIs</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <h5>Exemplo I</h5>
+    <div 
+        x-data="{
+            products: [],
+            init() { this.fetchProducts() },
+            fetchProducts() {
+                fetch('https://fakestoreapi.com/products')
+                    .then(response => response.json())
+                    .then(data => this.products = data);
+            }
+        }"
+    >
+        <ul>
+            <template x-for="product in products" :key="product.id">
+                <li x-text="product.title"></li>
+            </template>
+        </ul>
+    </div>
+
+    <br />
+
+    <h5>Exemplo II</h5>
+    <div 
+        x-data="{
+            products: [],
+            fetchProducts() { 
+                fetch('https://fakestoreapi.com/products')
+                    .then(response => response.json())
+                    .then(data => this.products = data);
+            }
+        }"
+    >
+        <ul x-init="fetchProducts()">
+            <template x-for="product in products" :key="product.id">
+                <li x-text="product.title"></li>
+            </template>
+        </ul>
+    </div>
+</body>
+
+</html>
