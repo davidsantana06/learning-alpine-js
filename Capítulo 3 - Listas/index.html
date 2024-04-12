@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 3 - Listas</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <h5>Exemplo I</h5>
+    <div x-data="{ names: ['David', 'Giovana'] }">
+        <ul>
+            <template x-for="name in names" :key="name">
+                <li x-text="name"></li>
+            </template>
+        </ul>
+    </div>
+
+    <br />
+
+    <h5>Exemplo II</h5>
+    <div 
+        x-data="{ 
+            names: ['Alisson', 'Jamille'],
+            name: '',
+            addName() {
+                this.names.push(this.name);
+                this.name = '';
+            }
+        }"
+    >
+        <ul>
+            <template x-for="name in names" :key="name">
+                <li x-text="name"></li>
+            </template>
+        </ul>
+        <input 
+            type="text" 
+            x-model="name" 
+            x-on:keydown.enter="addName()"
+        >
+        <button @click="addName()">Adicionar</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo III</h5>
+    <div 
+        x-data="{ 
+            names: ['Leonardo', 'Thamyles'],
+            name: '',
+            addName() {
+                this.names.push(this.name);
+                this.name = '';
+            },
+            removeName(name) { 
+                const index = this.names.findIndex(item => item == name);
+                this.names.splice(index, 1);
+            }
+        }"
+    >
+        <ul>
+            <template x-for="name in names" :key="name">
+                <div>
+                    <li x-text="name"></li>
+                    <button @click="removeName(name)">Remover</button>
+                </div>
+            </template>
+        </ul>
+        <input 
+            type="text" 
+            x-model="name" 
+            x-on:keydown.enter="addName()"
+        >
+        <button @click="addName()">Adicionar</button>
+    </div>
+</body>
+
+</html>
