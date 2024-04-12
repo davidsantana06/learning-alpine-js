@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1 - Componentes</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <h5>Exemplo I</h5>
+    <div 
+        x-data="{
+            count: 0,
+            increment() { this.count++; },
+            decrement() { this.count--; }
+        }"
+    >
+        <span x-text="count"></span>
+        <button x-on:click="increment()">Incrementar</button>
+        <button x-on:click="decrement()">Decrementar</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo II</h5>
+    <div x-data="{ open: false }">
+        <p x-show="open">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, numquam alias quas quis provident labore
+            repudiandae inventore unde nobis consectetur laborum commodi error, sequi soluta minima amet eos vitae hic!
+        </p>
+        <button @click="open = !open">Alternar</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo III</h5>
+    <div x-data="{ open: true }">
+        <template x-if="open">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic sed, a, aliquam molestiae id itaque nihil
+                quaerat laudantium illum voluptatum nostrum quam vitae amet tenetur perferendis. Sunt quo dicta
+                praesentium?
+            </p>
+        </template>
+        <button @click="open = !open">Alternar</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo IV</h5>
+    <div x-data="{ text: '' }">
+        <input 
+            type="text"
+            x-model="text"
+        >
+        <span x-html="text"></span>
+    </div>
+
+    <br />
+
+    <h5>Exemplo V</h5>
+    <div x-data="{ placeholder: '' }">
+        <input 
+            type="text"
+            x-model="placeholder"
+        >
+        <input disabled
+            type="text"
+            x-bind:placeholder="placeholder"
+        >
+    </div>
+</body>
+
+</html>
