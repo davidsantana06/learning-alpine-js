@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 2 - Operador ternário</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <h5>Exemplo I</h5>
+    <div x-data="{ activated: false }">
+        <div x-bind:class="activated ? 'activated' : 'deactivated'">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ea consequatur incidunt, voluptates
+                voluptatibus quis ex assumenda minus totam commodi aut quas qui ad debitis quos illo natus impedit eum!
+            </p>
+        </div>
+        <button @click="activated = !activated">Alternar</button>
+    </div>
+
+    <br />
+
+    <h5>Exemplo II</h5>
+    <div x-data="{ activated: true }">
+        <div x-bind:class="activated && 'activated'">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ea consequatur incidunt, voluptates
+                voluptatibus quis ex assumenda minus totam commodi aut quas qui ad debitis quos illo natus impedit eum!
+            </p>
+        </div>
+        <button @click="activated = !activated">Alternar</button>
+    </div>
+
+    <br />
+
+    <div x-data="{ activated: true }">
+        <div x-bind:class="{ 'deactivated': !activated }">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora, ducimus nihil iure aliquam ullam
+                itaque nisi recusandae amet. Voluptatem non reprehenderit, consequuntur nulla nam saepe voluptatibus
+                soluta aspernatur voluptatum sed?
+            </p>
+        </div>
+        <button @click="activated = !activated">Alternar</button>
+    </div>
+</body>
+
+</html>
