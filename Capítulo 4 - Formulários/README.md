@@ -1,6 +1,6 @@
 ### 📗 Capítulo 4 - Formulários
 
-Formulários são usados para a sumissão e coleta de dados. Com o Alpine.js, os formulários podem ser facilmente manipulados e controlados de forma dinâmica.
+Formulários são utilizados para a submissão e coleta de dados. O Alpine.js permite manipular formulários de forma dinâmica.
 
 ### 💡 Sobre o código...
 

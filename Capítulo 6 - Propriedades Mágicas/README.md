@@ -1,6 +1,6 @@
 ### 📙 Capítulo 6 - Propriedades Mágicas
 
-As propriedades mágicas são recursos poderosos que permitem interações dinâmicas e manipulação de elementos na interface do usuário.
+As propriedades mágicas são recursos poderosos que possibilitam interações dinâmicas e a manipulação eficaz de elementos na interface do usuário.
 
 ### 💡 Sobre o código...
 

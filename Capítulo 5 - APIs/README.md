@@ -1,6 +1,6 @@
 ### 📙 Capítulo 5 - APIs
 
-O Alpine.js possibilita uma interação simples e direta com servidores e APIs, através de requisições utilizando a função `fetch()` ou outras alternativas.
+O Alpine.js permite uma interação simples e direta com servidores e APIs, através de requisições utilizando a função `fetch()` ou outras alternativas.
 
 ### 💡 Sobre o código...
 
