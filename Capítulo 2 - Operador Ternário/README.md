@@ -1,12 +1,8 @@
-### Capítulo 2 - Operador Ternário
+### 📘 Capítulo 2 - Operador Ternário
 
 O operador ternário permite avaliar uma expressão condicional de forma compacta, retornando um valor com base na condição.
 
-
-<br />
-
-
-### :information_source: Sobre o código...
+### 💡 Sobre o Código...
 
 **`x-bind:class`**
 

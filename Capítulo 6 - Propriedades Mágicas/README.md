@@ -1,12 +1,8 @@
-### Capítulo 6 - Propriedades Mágicas
+### 📙 Capítulo 6 - Propriedades Mágicas
 
 As propriedades mágicas são recursos poderosos que permitem interações dinâmicas e manipulação de elementos na interface do usuário.
 
-
-<br />
-
-
-### :information_source: Sobre o código...
+### 💡 Sobre o código...
 
 **`x-ref`** - Atributo que permite referenciar elementos HTML.
 
