@@ -1,6 +1,6 @@
-### Learning Alpine.js
+### 🎓 Learning Alpine.js
 
-Repositório com os principais conceitos do framework Alpine.js, com os seguintes conteúdos:
+Este repositório contém os principais conceitos do Alpine.js na sua terceira versão (v3.x), incluindo:
 
 - 📘 Capítulo 1 - Componentes
 - 📘 Capítulo 2 - Operador Ternário
@@ -11,6 +11,9 @@ Repositório com os principais conceitos do framework Alpine.js, com os seguinte
 - 📕 Capítulo 7 - Eventos
 - 📕 Capítulo 8 - Gerenciamento de Estado
 
-<br/>
+### 📚 Referências
 
-Os assuntos abordados estão disponíveis na [documentação oficial do Alpine.js](https://alpinejs.dev/) e no [curso em vídeo](https://www.youtube.com/watch?v=epVY87ac2s0) disponibilizado pelo **Clube Full-stack**.
+Para aprofundar seus conhecimentos em Alpine.js, você pode consultar os seguintes materiais:
+
+- 📖 [Documentação Oficial do Alpine.js](https://alpinejs.dev/)
+- 🎥 [Curso em Vídeo - Clube Full-Stack](https://www.youtube.com/watch?v=epVY87ac2s0)
