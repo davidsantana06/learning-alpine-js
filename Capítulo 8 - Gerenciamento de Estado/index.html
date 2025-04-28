@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 8 - Gerenciamento de Estado</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <h5>Exemplo</h5>
+    <div x-data>
+        <span x-text="$store.counter.count"></span>
+        <button @click="$store.counter.count++">Incrementar</button>
+        <button @click="$store.counter.count--">Decrementar</button>
+    </div>
+    <br />
+    <div x-data>
+        <span x-text="$store.counter.count"></span>
+        <button @click="$store.counter.increment()">Incrementar</button>
+        <button @click="$store.counter.decrement()">Decrementar</button>
+    </div>
+    <br />
+    <div 
+        x-data="{
+            count: 0,
+            increment() { this.count++; },
+            decrement() { this.count--; }
+        }"
+    >
+        <span x-text="count"></span>
+        <button @click="increment()">Incrementar</button>
+        <button @click="decrement()">Decrementar</button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

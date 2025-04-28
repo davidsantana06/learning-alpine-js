@@ -1,12 +1,8 @@
-### Capítulo 1 - Componentes
+### 📘 Capítulo 1 - Componentes
 
 Os componentes são pequenos blocos de funcionalidade interativa que podem ser facilmente incorporados à página, através da inclusão do `x-data`.
 
-
-<br />
-
-
-### :information_source: Sobre o código...
+### 💡 Sobre o Código...
 
 **`x-data`** - Diretiva que define os dados e métodos que serão utilizados dentro de um componente.
 
